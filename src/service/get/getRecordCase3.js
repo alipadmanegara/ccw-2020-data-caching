@@ -12,7 +12,7 @@ const getByUserId = async (req, res) => {
     userData = JSON.parse(redisResult);
   } else {
     userData = await userDataModel.find({ userId });
-    await sleep(3000);
+    await sleep(10000);
     redisClient.setex(redisKey, 3600, JSON.stringify(userData));
   }
 

@@ -5,7 +5,7 @@ const getByUserId = async (req, res) => {
   const { userId } = req.params;
 
   userData = await userDataModel.find({ userId });
-  await sleep(3000);
+  await sleep(10000);
 
   res.status(200).send({
     data: userData
