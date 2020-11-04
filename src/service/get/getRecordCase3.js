@@ -8,6 +8,7 @@ const getByUserId = async (req, res) => {
   const redisKey = "accountList_" + userId.toLowerCase();
   const redisResult = await redisClient.get(redisKey);
 
+  let userData = {};
   if (redisResult) {
     userData = JSON.parse(redisResult);
   } else {
